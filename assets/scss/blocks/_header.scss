@@ -5,6 +5,7 @@
     @include adaptive-value("padding-top", 16, 7, 1);
     @include adaptive-value("padding-bottom", 16, 7, 1);
     backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     z-index: 200;
 
     &__container {
@@ -56,6 +57,7 @@
     &__body {
         background: rgba(29, 29, 31, 0.97);
         backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
         position: fixed;
         z-index: 50;
         top: 0;

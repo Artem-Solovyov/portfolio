@@ -294,10 +294,45 @@ body._lock {
   transform: translate(0, -50%);
   right: 0;
   width: 20.375rem;
-  height: 21.375rem;
+  height: 20.375rem;
   border-radius: 50%;
   background: #32e6e2;
   filter: blur(330px);
+}
+@media (max-width: 20em) {
+  .wrapper::before {
+    width: 9.375rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 80em) {
+  .wrapper::before {
+    width: calc(
+                9.375rem + 176 * ((100vw - 20rem) / 960)
+            );
+  }
+}
+@media (max-width: 20em) {
+  .wrapper::before {
+    height: 10rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 80em) {
+  .wrapper::before {
+    height: calc(
+                10rem + 166 * ((100vw - 20rem) / 960)
+            );
+  }
+}
+.wrapper.iphone::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  background: linear-gradient(209.78deg, rgba(50, 230, 226, 0.66) 17.76%, rgba(0, 255, 249, 0) 67%);
+  opacity: 0.09;
 }
 
 @keyframes rotate {
@@ -489,6 +524,7 @@ body._lock {
   padding-top: 1rem;
   padding-bottom: 1rem;
   backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   z-index: 200;
 }
 @media (max-width: 20em) {
@@ -573,6 +609,7 @@ body._lock {
 .menu__body {
   background: rgba(29, 29, 31, 0.97);
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   position: fixed;
   z-index: 50;
   top: 0;
@@ -811,10 +848,38 @@ body._lock {
   top: 0;
   right: 0;
   width: 20.375rem;
-  height: 21.375rem;
+  height: 20.375rem;
   border-radius: 50%;
-  background: #32e6e2;
+  background-color: #32e6e2;
+  background-size: cover;
   filter: blur(330px);
+  -moz-filter: blur(330px);
+  -webkit-filter: blur(330px);
+  -o-filter: blur(330px);
+}
+@media (max-width: 20em) {
+  .main-block::before {
+    width: 9.375rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 80em) {
+  .main-block::before {
+    width: calc(
+                9.375rem + 176 * ((100vw - 20rem) / 960)
+            );
+  }
+}
+@media (max-width: 20em) {
+  .main-block::before {
+    height: 10rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 80em) {
+  .main-block::before {
+    height: calc(
+                10rem + 166 * ((100vw - 20rem) / 960)
+            );
+  }
 }
 @media (max-width: 20em) {
   .main-block {
@@ -1190,6 +1255,8 @@ body._lock {
 }
 
 .item-work {
+  border-radius: 1.5rem;
+  overflow: hidden;
   position: relative;
   overflow: hidden;
 }
@@ -1199,6 +1266,33 @@ body._lock {
 @media (max-width: 43.6875em) {
   .item-work._celestial .item-work__body {
     background: linear-gradient(179.86deg, rgba(29, 29, 31, 0.45) 0.15%, rgba(29, 29, 31, 0) 97.14%);
+  }
+}
+.item-work._future {
+  background: url("../assets/src/images/works/futurebgphone.jpg") center no-repeat;
+  background-size: cover;
+}
+.item-work._future .item-work__body {
+  background: none;
+  backdrop-filter: none;
+}
+@media (min-width: 43.75em) {
+  .item-work._future {
+    background-image: url("../assets/src/images/works/futurebg.jpg");
+  }
+}
+.item-work._axe {
+  background: url("../assets/src/images/works/axebgphone.jpg") no-repeat;
+  background-position: 0% 30%;
+  background-size: cover;
+}
+.item-work._axe .item-work__body {
+  background: none;
+  backdrop-filter: none;
+}
+@media (min-width: 43.75em) {
+  .item-work._axe {
+    background-image: url("../assets/src/images/works/axebg.jpg");
   }
 }
 .item-work._aimagine .glow-button {
@@ -1311,6 +1405,8 @@ body._lock {
   z-index: 5;
   background: linear-gradient(89.86deg, rgba(29, 29, 31, 0.45) 0.15%, rgba(29, 29, 31, 0) 97.14%);
   backdrop-filter: blur(2px);
+  border-radius: 1.5rem;
+  -webkit-backdrop-filter: blur(2px);
   padding: 2rem 1.5rem;
 }
 @media (min-width: 43.75em) {

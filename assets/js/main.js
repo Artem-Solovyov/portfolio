@@ -38,6 +38,9 @@ if (!isMobile.any()) {
   document.body.classList.add("_touch");
 }
 
+if (isMobile.iOS()) {
+  document.querySelector(".wrapper").classList.add("iphone");
+}
 // ibg image
 
 function ibg() {
@@ -155,6 +158,7 @@ document.querySelectorAll(".glow-button").forEach((button) => {
 // };
 
 /* -- Glow effect end -- */
+
 document.getElementById("cards").onmousemove = (e) => {
   for (const card of document.getElementsByClassName("card")) {
     const rect = card.getBoundingClientRect(),
@@ -165,6 +169,7 @@ document.getElementById("cards").onmousemove = (e) => {
     card.style.setProperty("--mouse-y", `${y}px`);
   }
 };
+
 //========================= Lotti start===============================
 
 const anim = lottie;
